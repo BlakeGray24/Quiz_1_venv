@@ -31,6 +31,7 @@ vendorList = open('VendorList.csv','r')
 
 vendorInfo = vendorList.read()
 vendorInfo = vendorInfo.split()
+print(type(vendorInfo))
 
 
 
@@ -45,26 +46,27 @@ outfile.write('Name,Email,Phone\n')
 
 # create an empty dictionary
 
-vendors = dict()
+vendors={}
 
 
 # iterate through the csv object
 
 for i in vendorInfo:
 
-    vendors['Name'] = i
-    vendors['Email'] = i
-    vendors['phone'] = i
-
+    name  = vendorInfo[1] + vendorInfo[2] 
+    email = vendorInfo[4]
+    phone = vendorInfo[5]
 
     # add the key-value pair to the dictionary
-    for i in vendors:
-
-
+    for i in vendorInfo:
+        vendors['Name'] = name
+        vendors['Email'] = email
+        vendors['phone'] = phone
 
 
 
 # print the dictionary after the loop is finished
+print(name)
 print(vendors)
 
 
